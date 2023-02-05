@@ -18,10 +18,7 @@ export const carouselWrapper = css`
     /* position */
     /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
     position: relative;
-    
-    /* size */
-    width: 500px;
-    height: 300px;
+   
     
     overflow: hidden;
     
@@ -32,8 +29,8 @@ export const carouselWrapper = css`
 export const itemContainer = css`
     display:flex;
     
-    width: 500px;
-    height: 300px;
+    width: 600px;
+    height: 400px;
     
     /* transition */
     transform: translate(0px);
@@ -41,6 +38,8 @@ export const itemContainer = css`
 `;
 
 export const carouselItem = css`
+    width: 600px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,8 +47,10 @@ export const carouselItem = css`
 
 export const imageInCarousel = css`
     /* size */
-    width: 500px;
-    height: 300px;
+    height: 100%;
+    width: auto;
+    
+    margin: 0 auto;
     
     /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
     flex-shrink: 0;

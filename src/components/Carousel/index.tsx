@@ -69,7 +69,7 @@ const Carousel = ({data}: CarouselProps) => {
     const nextPage = () => {
         if(itemContainerRef?.current == undefined) return;
         if(currentPage + 1 <= data.length - 1) {
-            itemContainerRef.current.style.transform = `translate(-${(currentPage + 1) * 500}px)`;
+            itemContainerRef.current.style.transform = `translate(-${(currentPage + 1) * 600}px)`;
             setCurrentPage(currentPage + 1);
         }
     }
@@ -77,14 +77,14 @@ const Carousel = ({data}: CarouselProps) => {
     const prevPage = () => {
         if(itemContainerRef?.current == undefined) return;
         if(currentPage > 0) {
-            itemContainerRef.current.style.transform = `translate(-${(currentPage - 1) * 500}px)`;
+            itemContainerRef.current.style.transform = `translate(-${(currentPage - 1) * 600}px)`;
             setCurrentPage(currentPage - 1);
         }
     }
 
     const CarouselItemFactory = (data: CarouselItem) => {
-        return <div key={data.id} css={carouselItem}>
-            <div css={[flexDirectionColumnAlignCenter, justifyCenter]}>
+        return <div key={data.id}>
+            <div css={[flexDirectionColumnAlignCenter, justifyCenter, carouselItem]}>
                 <img src={data.url} alt={`${data.id}`} css={imageInCarousel}/>
             </div>
         </div>
