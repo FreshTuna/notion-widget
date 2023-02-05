@@ -18,7 +18,6 @@ const Carousel = ({data}: CarouselProps) => {
     const [currentPage, setCurrentPage] = useState<number>(0);
     const [startPoint, setStartPoint] = useState<number>(0);
     const [endPoint, setEndPoint] = useState<number>(0);
-    const [width, setWidth] = useState<number>(0);
 
     const mouseDownEvent = (e: MouseEvent) => {
         console.log("mouseDown!", e.pageX);
@@ -40,21 +39,21 @@ const Carousel = ({data}: CarouselProps) => {
         }
     },[]);
 
-    useLayoutEffect( () => {
-        itemContainerRef?.current && setWidth(itemContainerRef?.current?.clientWidth);
-    },[]);
-
-    useEffect(() => {
-        const handleResize = () => {
-            itemContainerRef?.current && setWidth(itemContainerRef?.current?.clientWidth);
-        }
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        }
-    },[]);
+    // useLayoutEffect( () => {
+    //     itemContainerRef?.current && setWidth(itemContainerRef?.current?.clientWidth);
+    // },[]);
+    //
+    // useEffect(() => {
+    //     const handleResize = () => {
+    //         itemContainerRef?.current && setWidth(itemContainerRef?.current?.clientWidth);
+    //     }
+    //
+    //     window.addEventListener('resize', handleResize);
+    //
+    //     return () => {
+    //         window.removeEventListener('resize', handleResize);
+    //     }
+    // },[]);
 
     useEffect(() => {
         if(startPoint < endPoint){

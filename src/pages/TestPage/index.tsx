@@ -1,7 +1,7 @@
 import {useState} from "react";
-import {flexDirectionColumnAlignCenter, justifyCenter} from "../../style/alignTemplete";
 import Carousel from "../../components/Carousel";
-import {pageWrapper} from "../../components/Carousel/style";
+import {pageWrapper} from "./style";
+import {alignCenterJustifyCenter} from "../../style/alignTemplete";
 
 interface CarouselItem {
     id: number,
@@ -31,7 +31,7 @@ const TestPage = () => {
     )
 
     return(
-        <div css={pageWrapper}>
+        <div css={[pageWrapper, alignCenterJustifyCenter]}>
             <Carousel data={data} />
         </div>
     )
