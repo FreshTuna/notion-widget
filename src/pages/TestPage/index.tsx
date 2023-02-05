@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {flexDirectionColumnAlignCenter, justifyCenter} from "../../style/alignTemplete";
-import {Carousel} from "antd";
+import Carousel from "../../components/Carousel";
+import {pageWrapper} from "../../components/Carousel/style";
 
 interface CarouselItem {
     id: number,
@@ -23,22 +24,9 @@ const TestPage = () => {
         ]
     )
 
-    const CarouselItemFactory = (data: CarouselItem) => {
-        console.log(data);
-        return <div key={data.id}>
-            <div css={[flexDirectionColumnAlignCenter, justifyCenter]}>
-                <img src={data.url} alt={`${data.id}`}/>
-            </div>
-        </div>
-    }
-
     return(
-        <div>
-            <Carousel >
-                {
-                    data && data.map(CarouselItemFactory)
-                }
-            </Carousel>
+        <div css={pageWrapper}>
+            <Carousel data={data} />
         </div>
     )
 
